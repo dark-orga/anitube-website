@@ -1,0 +1,13 @@
+./node_modules/.bin/lint-staged ||
+(
+    echo '❌ Lint-staged failed.'
+    false;
+)
+
+npm run build ||
+(
+    echo '❌ Build failed.';
+    false;
+)
+
+echo '✅ Code verifications successful!'

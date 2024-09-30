@@ -1,0 +1,108 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "react/display-name": "off",
+    "@next/next/no-img-element": "off",
+    "react/no-unescaped-entities": "off",
+    "no-console": "warn", // if you need to keep a console statement, use eslint-disable-line no-console
+    "import/no-anonymous-default-export": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "api": "always",
+        "svg": "always",
+        "png": "always",
+        "hooks": "always",
+        "hook": "always",
+        "json": "always",
+        "scss": "always",
+        "gif": "always",
+        "jpg": "always"
+      }
+    ], // we don't allow using extentions in the import statments
+    "@typescript-eslint/no-unnecessary-condition": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "eol-last": ["error", "always"], // always end file with a newline
+    "no-multiple-empty-lines": [
+      // prevents more than 1 empty line successively
+      2,
+      {
+        "max": 1
+      }
+    ],
+    // #region  //*=========== Import Sort ===========
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          // Side effect imports.
+          // Packages.
+          // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+          ["^\\u0000", "^@?\\w"],
+          // Node.js builtins prefixed with `node:`.
+          ["^node:"],
+          // root imports
+          ["^~/"],
+          // Types
+          ["^~/types"],
+          // Absolute imports and other imports such as Vue-style `@/foo`.
+          // Anything not matched in another group.
+          ["^~/components", "^@@/", "^@/", "#/"],
+          // Relative imports.
+          // Anything that starts with a dot.
+          ["^\\."],
+          // Other imports
+          ["^"]
+        ]
+      }
+    ],
+    // #endregion
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "lines-around-comment": [
+      "error",
+      {
+        "beforeLineComment": true,
+        "beforeBlockComment": true,
+        "allowBlockStart": true,
+        "allowClassStart": true,
+        "allowObjectStart": true,
+        "allowArrayStart": true
+      }
+    ],
+    "newline-before-return": "error",
+    "import/newline-after-import": [
+      "error",
+      {
+        "count": 1
+      }
+    ]
+  },
+  "plugins": ["import", "simple-import-sort"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": ["./tsconfig.json"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["src/iconify-bundle/*"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}

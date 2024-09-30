@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "Codium.codium",
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "aaron-bond.better-comments"
+  ]
+}
