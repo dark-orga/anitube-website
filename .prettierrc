@@ -13,7 +13,7 @@
   "singleAttributePerLine": true,
   "requirePragma": false,
   "insertPragma": false,
-  "proseWrap": "preserve", 
+  "proseWrap": "preserve",
   "htmlWhitespaceSensitivity": "css",
   "endOfLine": "lf",
   "embeddedLanguageFormatting": "off"
