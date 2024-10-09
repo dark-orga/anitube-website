@@ -1,5 +1,5 @@
 import { nextui } from '@nextui-org/theme'
-import fluid, { extract, fontSize,screens } from 'fluid-tailwind'
+import fluid, { extract, fontSize, screens } from 'fluid-tailwind'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -20,8 +20,17 @@ const config: Config = {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
+      animation: {
+        'move-up-down': 'moveUpDown 4s ease-in-out infinite',
+      },
+      keyframes: {
+        moveUpDown: {
+          '50%': { transform: 'translateY(-50px)' },
+        },
+      },
     },
   },
+
   plugins: [
     fluid({
       checkSC144: false,
