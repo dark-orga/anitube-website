@@ -1,5 +1,5 @@
 import { nextui } from '@nextui-org/theme'
-import fluid, { extract, fontSize,screens } from 'fluid-tailwind'
+import fluid, { extract, fontSize, screens } from 'fluid-tailwind'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -22,6 +22,7 @@ const config: Config = {
       },
     },
   },
+
   plugins: [
     fluid({
       checkSC144: false,
