@@ -92,15 +92,7 @@ const LoginCard: React.FC<LoginCardProps> = ({ type, setType }) => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form
-              onSubmit={
-                type === 'login'
-                  ? loginMethods.handleSubmit(onLoginSubmit)
-                  : type === 'register'
-                    ? signUpMethods.handleSubmit(onSignUpSubmit)
-                    : forgotPasswordMethods.handleSubmit(onForgotPasswordSubmit)
-              }
-            >
+            <form>
               <div className="flex flex-col gap-4">
                 <div className="grid w-full items-center gap-4">
                   {type === 'register' && (
