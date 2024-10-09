@@ -1,11 +1,7 @@
 'use client'
-import { useState } from 'react'
-
-import { LoginCard } from '../LoginCard'
+import { AuthDialog } from '../AuthDialog'
 
 const LandingPage = () => {
-  const [type, setType] = useState('login')
-
   return (
     <div className="bg-black h-screen flex justify-center items-center relative">
       <video
@@ -22,18 +18,15 @@ const LandingPage = () => {
       </video>
 
       <div className="flex flex-col text-center text-white gap-5 drop-shadow-lg">
-        <h1 className="text-5xl font-bold">Welcome to Anitube</h1>
-        <div className="text-lg mx-auto w-4/5 md:w-full">
+        <h1 className="~text-5xl/8xl font-bold">Welcome to Anitube</h1>
+        <div className="~text-lg/2xl mx-auto w-4/5 md:w-full">
           <p>
             A lesson without pain is meaningless. That’s because you cannot gain
             something without sacrificing something else in return.
           </p>
           <p>- Welcome to the world of anime</p>
         </div>
-        <LoginCard
-          type={type}
-          setType={setType}
-        />
+        <AuthDialog />
       </div>
     </div>
   )

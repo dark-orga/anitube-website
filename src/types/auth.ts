@@ -1,11 +1,5 @@
-export interface LoginCardProps {
-  type: string
-  setType: React.Dispatch<React.SetStateAction<string>>
-}
-
 export type LoginForm = {
   email: string
-  password: string
 }
 
 export type SignUpForm = {
