@@ -1,12 +1,9 @@
 'use client'
-import { Button } from '@nextui-org/react'
-import { useRouter } from 'next/navigation'
+import { AuthDialog } from '../AuthDialog'
 
 const LandingPage = () => {
-  const router = useRouter()
-
   return (
-    <div className="bg-black h-screen flex justify-center items-center">
+    <div className="bg-black h-screen flex justify-center items-center relative">
       <video
         autoPlay
         muted
@@ -14,8 +11,6 @@ const LandingPage = () => {
         className="absolute w-full h-full object-cover opacity-60"
       >
         <source
-
-          // We still need to find a better video here later on
           src="/videos/background.mp4"
           type="video/mp4"
         />
@@ -31,15 +26,7 @@ const LandingPage = () => {
           </p>
           <p>- Welcome to the world of anime</p>
         </div>
-        <Button
-          color="secondary"
-          className="px-10 py-6 w-fit mx-auto text-xl"
-          onClick={() => {
-            router.push('/login')
-          }}
-        >
-          Login
-        </Button>
+        <AuthDialog />
       </div>
     </div>
   )
