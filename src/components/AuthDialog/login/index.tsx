@@ -40,8 +40,8 @@ const Login: React.FC<AuthDialogProps> = ({
 
   return (
     <div className="flex w-full gap-4">
-      <Card className="sm:w-[55%] w-[100%] items-center border-none shadow-none ">
-        <CardHeader className="flex gap-2 items-center">
+      <Card className="w-[100%] items-center border-none shadow-none sm:w-[55%]">
+        <CardHeader className="flex items-center gap-2">
           <CardTitle className="text-purple-800">Login</CardTitle>
           <CardDescription>
             Anitube - a better place to watch anime online for free
@@ -80,7 +80,7 @@ const Login: React.FC<AuthDialogProps> = ({
                   </span>
                 </CardDescription>
               </div>
-              <div className="flex py-2 items-center">
+              <div className="flex items-center py-2">
                 <div className="flex-grow border-t border-gray-300"></div>
                 <span className="px-4 text-sm text-gray-500">
                   Or Continue With
@@ -93,20 +93,20 @@ const Login: React.FC<AuthDialogProps> = ({
                   variant="outline"
                   onClick={() => {}}
                 >
-                  <Mail className="h-4 w-4 mr-2" /> Gmail
+                  <Mail className="mr-2 h-4 w-4" /> Gmail
                 </Button>
                 <Button
                   className="w-full hover:bg-gray-200"
                   variant="outline"
                   onClick={() => {}}
                 >
-                  <Si42 className="h-4 w-4 mr-1" /> Intra
+                  <Si42 className="mr-1 h-4 w-4" /> Intra
                 </Button>
               </div>
             </div>
           </form>
         </CardContent>
-        <CardFooter className="flex flex-col gap-2 justify-center w-full">
+        <CardFooter className="flex w-full flex-col justify-center gap-2">
           <Button
             type="submit"
             className="w-full bg-purple-700 hover:bg-purple-800"
@@ -125,7 +125,7 @@ const Login: React.FC<AuthDialogProps> = ({
           </CardDescription>
         </CardFooter>
       </Card>
-      <div className="hidden sm:flex sm:grow relative overflow-hidden items-center justify-center rounded-lg bg-purple-500">
+      <div className="relative hidden items-center justify-center overflow-hidden rounded-lg bg-purple-500 sm:flex sm:grow">
         <Image
           src="/images/login.jpeg"
           alt="Animated GIF"

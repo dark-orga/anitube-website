@@ -3,12 +3,12 @@ import { AuthDialog } from '../AuthDialog'
 
 const LandingPage = () => {
   return (
-    <div className="bg-black h-screen flex justify-center items-center relative">
+    <div className="relative flex h-screen items-center justify-center bg-black">
       <video
         autoPlay
         muted
         loop
-        className="absolute w-full h-full object-cover opacity-60"
+        className="absolute h-full w-full object-cover opacity-60"
       >
         <source
           src="/videos/background.mp4"
@@ -17,9 +17,9 @@ const LandingPage = () => {
         Your browser does not support the video tag.
       </video>
 
-      <div className="flex flex-col text-center text-white gap-5 drop-shadow-lg">
-        <h1 className="~text-5xl/8xl font-bold">Welcome to Anitube</h1>
-        <div className="~text-lg/2xl mx-auto w-4/5 md:w-full">
+      <div className="flex flex-col gap-5 text-center text-white drop-shadow-lg">
+        <h1 className="font-bold ~text-5xl/8xl">Welcome to Anitube</h1>
+        <div className="mx-auto w-4/5 ~text-lg/2xl md:w-full">
           <p>
             A lesson without pain is meaningless. That’s because you cannot gain
             something without sacrificing something else in return.

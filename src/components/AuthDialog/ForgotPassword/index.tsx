@@ -36,7 +36,7 @@ const ForgotPassword: React.FC<AuthDialogProps> = ({ switchToLogin }) => {
 
   return (
     <div className="flex w-full gap-4">
-      <div className="hidden sm:flex sm:grow items-center justify-center rounded-lg">
+      <div className="hidden items-center justify-center rounded-lg sm:flex sm:grow">
         <Image
           src="/images/passwordReset.png"
           alt="Illustration"
@@ -44,8 +44,8 @@ const ForgotPassword: React.FC<AuthDialogProps> = ({ switchToLogin }) => {
           height={320}
         />
       </div>
-      <Card className="sm:w-[55%] w-[90%] items-center border-none shadow-none">
-        <CardHeader className="flex gap-2 items-center">
+      <Card className="w-[90%] items-center border-none shadow-none sm:w-[55%]">
+        <CardHeader className="flex items-center gap-2">
           <CardTitle className="text-purple-800">Reset Password</CardTitle>
           <CardDescription>
             We will send an email to your box, just follow that link to set your
@@ -72,7 +72,7 @@ const ForgotPassword: React.FC<AuthDialogProps> = ({ switchToLogin }) => {
             </div>
           </form>
         </CardContent>
-        <CardFooter className="flex flex-col gap-2 justify-center w-full">
+        <CardFooter className="flex w-full flex-col justify-center gap-2">
           <Button
             type="submit"
             className="w-full bg-purple-700 hover:bg-purple-800"
