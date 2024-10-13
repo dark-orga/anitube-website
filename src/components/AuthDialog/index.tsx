@@ -1,6 +1,5 @@
 'use client'
 
-import * as React from 'react'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -20,11 +19,11 @@ const AuthDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="~px-6/10 ~py-4/7 w-fit mx-auto ~text-xl/2xl bg-purple-800 hover:bg-purple-900 rounded-md">
+        <Button className="mx-auto w-fit rounded-md bg-purple-800 ~text-xl/2xl ~px-6/10 ~py-4/7 hover:bg-purple-900">
           Login
         </Button>
       </DialogTrigger>
-      <DialogContent className="flex justify-center rounded-lg bg-white p-0 sm:max-w-2xl max-w-md ">
+      <DialogContent className="flex max-w-md justify-center rounded-lg bg-white p-0 sm:max-w-2xl">
         {type === 'login' && (
           <Login
             switchToForgotPassword={switchToForgotPassword}
