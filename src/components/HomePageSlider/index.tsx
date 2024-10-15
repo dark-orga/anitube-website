@@ -14,7 +14,7 @@ export function CarouselDemo() {
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>
             <div className="">
-              <Card>
+              <Card className="border-none">
                 <CardContent className="relative flex items-center justify-center p-0">
                   <img
                     src="https://img.flawlessfiles.com/_r/1366x768/100/af/1c/af1c058948079aabe09de052cc7b4261/af1c058948079aabe09de052cc7b4261.jpg"
