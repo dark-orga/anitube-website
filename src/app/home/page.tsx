@@ -3,6 +3,8 @@
 import Lenis from 'lenis'
 import { useEffect, useRef } from 'react'
 
+import { CarouselDemo } from '@/components/HomePageSlider'
+
 export default () => {
   const animationRequestRef = useRef<number>()
 
@@ -22,5 +24,9 @@ export default () => {
     }
   }, [])
 
-  return <div className="">home</div>
+  return (
+    <div className="">
+      <CarouselDemo />
+    </div>
+  )
 }
