@@ -14,7 +14,36 @@ export function ImageCarousel() {
       name: 'Attack on Titan',
       logo: 'https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480/CurationAssets/Dragon%20Ball%20DAIMA/SEASON%201/ULTRA-WIDE/DBDaima-S1-KV1-UW-Logo.png',
       description:
-        'Eren Yeager is the main character in Attack on Titan, a world where humanity battles against giant humanoid Titans for survival. Naruto Uzumaki, a young ninja with a dream to become the Hokage, must overcome many trials and enemies on his journey.must overcome many trials and enemies on his journey ',
+        'Eren Yeager is the main character in Attack on Titan, aEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world w world where humanity battles against giant humanoid Titans for survival. Naruto Uzumaki, a young ninja with a dream to become the Hokage, must overcome many trials and enemies on his journey.must overcome many trials and enemies on his journey ',
+      imgSrc:
+        'https://i.pinimg.com/originals/43/af/d0/43afd01dc42127c352f1fde070cc2be0.jpg',
+      genres: ['Action', 'Drama', 'Fantasy'],
+    },
+    {
+      id: 3,
+      name: 'Fullmetal Alchemist: Brotherhood',
+      logo: 'https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480/CurationAssets/Dragon%20Ball%20DAIMA/SEASON%201/ULTRA-WIDE/DBDaima-S1-KV1-UW-Logo.png',
+      description:
+        "Two brothers, Edward and Alphonse, use alchemy in their quest to find the Philosopher's Stone and restore their bodies. Naruto Uzumaki, a young ninja with a dream to become the Hokage, must overcome many trials and enemies on his journey.",
+      imgSrc: 'https://images8.alphacoders.com/119/1195441.jpg',
+      genres: ['Action', 'Adventure', 'Drama'],
+    },
+    {
+      id: 4,
+      name: 'Death Note',
+      logo: 'https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480/Curation Testing/UAT Round 3 testing/MHA-S7-UW-Logo.png',
+      description:
+        'Light Yagami, a high school student, discovers a notebook that allows him to kill anyone by writing their name in it. Naruto Uzumaki, a young ninja with a dream to become the Hokage, must overcome many trials and enemies on his journey.',
+      imgSrc:
+        'https://i.pinimg.com/originals/81/1a/3b/811a3b5e0eb3df1635bfb8081436114e.jpg',
+      genres: ['Thriller', 'Supernatural', 'Psychological'],
+    },
+    {
+      id: 1,
+      name: 'Attack on Titan',
+      logo: 'https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480/CurationAssets/Dragon%20Ball%20DAIMA/SEASON%201/ULTRA-WIDE/DBDaima-S1-KV1-UW-Logo.png',
+      description:
+        'Eren Yeager is the main character in Attack on Titan, aEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world wEren Yeager is the main character in Attack on Titan, a world w world where humanity battles against giant humanoid Titans for survival. Naruto Uzumaki, a young ninja with a dream to become the Hokage, must overcome many trials and enemies on his journey.must overcome many trials and enemies on his journey ',
       imgSrc:
         'https://i.pinimg.com/originals/43/af/d0/43afd01dc42127c352f1fde070cc2be0.jpg',
       genres: ['Action', 'Drama', 'Fantasy'],
@@ -54,7 +83,6 @@ export function ImageCarousel() {
 
   const handlePreviousSlide = () => {
     setIsTransitioning(true)
-    setWidth(0)
     setTimeout(() => {
       setCurrentIndex((currentIndex - 1 + slides.length) % slides.length)
       setWidth(0)
@@ -100,12 +128,12 @@ export function ImageCarousel() {
         >
           <ChevronRight className="h-12 w-12 text-gray-100 drop-shadow-[0_0.3px_0.3px_rgba(0,0,0,1.1)]" />
         </Button>
-        <div className="w-100 absolute bottom-20 left-20 flex flex-col gap-4">
-          <h1 className="text-4xl font-bold text-white">
+        <div className="absolute bottom-20 left-20 flex w-1/2 flex-col gap-4">
+          <h1 className="font-bold text-white ~text-2xl/4xl">
             {slides[currentIndex].name}
           </h1>
-          <p className="text-md text-white">
-            {slides[currentIndex].description.slice(0, 277)}
+          <p className="line-clamp-3 w-full text-white ~text-sm/lg">
+            {slides[currentIndex].description}
           </p>
           <p className="text-md text-white">
             {slides[currentIndex].genres.join(', ')}
