@@ -11,33 +11,32 @@ export function ImageCarousel() {
   const slides = [
     {
       id: 1,
+      name: 'Attack on Titan',
+      logo: 'https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480/CurationAssets/Dragon%20Ball%20DAIMA/SEASON%201/ULTRA-WIDE/DBDaima-S1-KV1-UW-Logo.png',
+      description:
+        'Eren Yeager is the main character in Attack on Titan, a world where humanity battles against giant humanoid Titans for survival. Naruto Uzumaki, a young ninja with a dream to become the Hokage, must overcome many trials and enemies on his journey.must overcome many trials and enemies on his journey ',
       imgSrc:
         'https://i.pinimg.com/originals/43/af/d0/43afd01dc42127c352f1fde070cc2be0.jpg',
-    },
-    {
-      id: 2,
-      imgSrc:
-        'https://img.freepik.com/free-photo/anime-moon-landscape_23-2151645809.jpg',
+      genres: ['Action', 'Drama', 'Fantasy'],
     },
     {
       id: 3,
-      imgSrc:
-        'https://i.pinimg.com/originals/81/1a/3b/811a3b5e0eb3df1635bfb8081436114e.jpg',
+      name: 'Fullmetal Alchemist: Brotherhood',
+      logo: 'https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480/CurationAssets/Dragon%20Ball%20DAIMA/SEASON%201/ULTRA-WIDE/DBDaima-S1-KV1-UW-Logo.png',
+      description:
+        "Two brothers, Edward and Alphonse, use alchemy in their quest to find the Philosopher's Stone and restore their bodies. Naruto Uzumaki, a young ninja with a dream to become the Hokage, must overcome many trials and enemies on his journey.",
+      imgSrc: 'https://images8.alphacoders.com/119/1195441.jpg',
+      genres: ['Action', 'Adventure', 'Drama'],
     },
     {
       id: 4,
+      name: 'Death Note',
+      logo: 'https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480/Curation Testing/UAT Round 3 testing/MHA-S7-UW-Logo.png',
+      description:
+        'Light Yagami, a high school student, discovers a notebook that allows him to kill anyone by writing their name in it. Naruto Uzumaki, a young ninja with a dream to become the Hokage, must overcome many trials and enemies on his journey.',
       imgSrc:
         'https://i.pinimg.com/originals/81/1a/3b/811a3b5e0eb3df1635bfb8081436114e.jpg',
-    },
-    {
-      id: 5,
-      imgSrc:
-        'https://i.pinimg.com/originals/81/1a/3b/811a3b5e0eb3df1635bfb8081436114e.jpg',
-    },
-    {
-      id: 6,
-      imgSrc:
-        'https://i.pinimg.com/originals/81/1a/3b/811a3b5e0eb3df1635bfb8081436114e.jpg',
+      genres: ['Thriller', 'Supernatural', 'Psychological'],
     },
   ]
 
@@ -46,10 +45,9 @@ export function ImageCarousel() {
 
   const handleNextSlide = () => {
     setIsTransitioning(true)
-    setCurrentIndex((currentIndex + 1) % slides.length)
-    setWidth(0)
-
     setTimeout(() => {
+      setCurrentIndex((currentIndex + 1) % slides.length)
+      setWidth(0)
       setIsTransitioning(false)
     }, 400)
   }
@@ -59,6 +57,7 @@ export function ImageCarousel() {
     setWidth(0)
     setTimeout(() => {
       setCurrentIndex((currentIndex - 1 + slides.length) % slides.length)
+      setWidth(0)
       setIsTransitioning(false)
     }, 400)
   }
@@ -84,8 +83,11 @@ export function ImageCarousel() {
         <img
           src={slides[currentIndex].imgSrc}
           alt={`Slide ${currentIndex + 1}`}
-          className={`h-full w-full object-cover transition-opacity duration-700 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+          className={`relative h-full w-full object-cover transition-opacity duration-700 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
         />
+        <div className="absolute left-0 top-0 flex h-full w-4/5 bg-gradient-to-r from-black to-transparent">
+          <h1 className="text-sm text-white"></h1>
+        </div>
         <Button
           onClick={handlePreviousSlide}
           className="absolute left-0 top-1/2 -translate-y-1/2 transform bg-transparent hover:bg-transparent"
@@ -98,18 +100,32 @@ export function ImageCarousel() {
         >
           <ChevronRight className="h-12 w-12 text-gray-100 drop-shadow-[0_0.3px_0.3px_rgba(0,0,0,1.1)]" />
         </Button>
-        <div className="absolute bottom-4 left-1/2 flex w-96 -translate-x-1/2 transform space-x-2">
+        <div className="w-100 absolute bottom-20 left-20 flex flex-col gap-4">
+          <h1 className="text-4xl font-bold text-white">
+            {slides[currentIndex].name}
+          </h1>
+          <p className="text-md text-white">
+            {slides[currentIndex].description.slice(0, 277)}
+          </p>
+          <p className="text-md text-white">
+            {slides[currentIndex].genres.join(', ')}
+          </p>
+          <Button className="w-fit rounded-none bg-purple-800 px-4 text-white hover:bg-purple-700">
+            Start Watching now
+          </Button>
+        </div>
+        <div className="absolute bottom-10 left-20 flex w-full transform space-x-2">
           {slides.map((slide, index) => (
             <div
               key={index}
               className={cn(
-                'h-2 w-8 transform overflow-hidden rounded-full bg-gray-600 duration-300',
+                'h-2 w-8 transform overflow-hidden rounded-full bg-gray-400 duration-300',
                 { 'w-16': currentIndex === index },
               )}
             >
               <div
                 className={cn(
-                  'h-full transform rounded-full bg-gray-600 duration-500 ease-linear',
+                  'h-full transform rounded-full bg-gray-300 duration-500 ease-linear',
                   {
                     'bg-purple-800': currentIndex === index,
                   },
