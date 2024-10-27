@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import Background from '@/../public/home/background.jpg'
+import { NavigationBar } from '@/components/Shared/NavigationBar'
 import { Container } from '@/components/System/Container'
 
 export default ({ children }: Readonly<{ children: React.ReactNode }>) => {
@@ -13,9 +14,10 @@ export default ({ children }: Readonly<{ children: React.ReactNode }>) => {
           fill
           priority
           placeholder="blur"
-          className="object-cover opacity-40 blur-lg"
+          className="object-cover opacity-20"
         />
       </div>
+      <NavigationBar />
       <div className="relative">
         <Container className="min-h-screen">{children}</Container>
       </div>
