@@ -1,0 +1,28 @@
+export const navigationItems = {
+  Discover: [
+    'trending',
+    'latest',
+    'top airing',
+    'most populare',
+    'most favorite',
+    'latest completed',
+    'top upcoming',
+  ],
+  genre: [
+    'Action',
+    'Adventure',
+    'Comedy',
+    'Drama',
+    'Fantasy',
+    'Mystery',
+    'Romance',
+    'Sci-Fi',
+    'Seinen',
+    'Shoujo',
+    'Shounen',
+    'Slice of Life',
+    'Sports',
+    'Supernatural',
+    'Thriller',
+  ],
+}

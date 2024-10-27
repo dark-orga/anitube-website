@@ -22,5 +22,5 @@ export default () => {
     }
   }, [])
 
-  return <div className="">home</div>
+  return <div className=""></div>
 }
