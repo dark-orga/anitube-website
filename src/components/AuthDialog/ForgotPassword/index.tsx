@@ -66,9 +66,11 @@ const ForgotPassword: React.FC<AuthDialogProps> = ({ switchToLogin }) => {
                 placeholder="Email"
                 className="bg-purple-200 hover:bg-purple-300"
               />
-              <p className="text-sm text-red-500">
-                {forgotPasswordMethods.formState.errors.email?.message || ''}
-              </p>
+              {forgotPasswordMethods.formState.errors.email?.message && (
+                <span className="text-sm text-red-500">
+                  {forgotPasswordMethods.formState.errors.email?.message}
+                </span>
+              )}
             </div>
           </form>
         </CardContent>

@@ -60,9 +60,11 @@ const SignUp: React.FC<AuthDialogProps> = ({ switchToLogin }) => {
                   placeholder="Username"
                   className="bg-purple-200 hover:bg-purple-300"
                 />
-                <p className="text-sm text-red-500">
-                  {signUpMethods.formState.errors.username?.message || ''}
-                </p>
+                {signUpMethods.formState.errors.username?.message && (
+                  <span className="text-sm text-red-500">
+                    {signUpMethods.formState.errors.username?.message}
+                  </span>
+                )}
               </div>
               <div className="grid w-full max-w-sm items-center">
                 <Input
@@ -72,9 +74,11 @@ const SignUp: React.FC<AuthDialogProps> = ({ switchToLogin }) => {
                   placeholder="Email"
                   className="bg-purple-200 hover:bg-purple-300"
                 />
-                <p className="text-sm text-red-500">
-                  {signUpMethods.formState.errors.email?.message || ''}
-                </p>
+                {signUpMethods.formState.errors.email?.message && (
+                  <span className="text-sm text-red-500">
+                    {signUpMethods.formState.errors.email?.message}
+                  </span>
+                )}
               </div>
               <div className="grid w-full max-w-sm items-center">
                 <Input
@@ -84,9 +88,11 @@ const SignUp: React.FC<AuthDialogProps> = ({ switchToLogin }) => {
                   placeholder="Password"
                   className="bg-purple-200 hover:bg-purple-300"
                 />
-                <p className="text-sm text-red-500">
-                  {signUpMethods.formState.errors.password?.message || ''}
-                </p>
+                {signUpMethods.formState.errors.password?.message && (
+                  <span className="text-sm text-red-500">
+                    {signUpMethods.formState.errors.password?.message}
+                  </span>
+                )}
               </div>
               <div className="grid w-full max-w-sm items-center">
                 <Input
@@ -96,10 +102,11 @@ const SignUp: React.FC<AuthDialogProps> = ({ switchToLogin }) => {
                   placeholder="Confirm Password"
                   className="bg-purple-200 hover:bg-purple-300"
                 />
-                <p className="text-sm text-red-500">
-                  {signUpMethods.formState.errors.confirmPassword?.message ||
-                    ''}
-                </p>
+                {signUpMethods.formState.errors.confirmPassword?.message && (
+                  <span className="text-sm text-red-500">
+                    {signUpMethods.formState.errors.confirmPassword?.message}
+                  </span>
+                )}
               </div>
             </div>
           </form>
