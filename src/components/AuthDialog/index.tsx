@@ -23,7 +23,7 @@ const AuthDialog = () => {
           Login
         </Button>
       </DialogTrigger>
-      <DialogContent className="flex max-w-md justify-center rounded-lg bg-white p-0 sm:max-w-2xl">
+      <DialogContent className="flex max-w-md justify-center rounded-lg bg-white p-0 text-black sm:max-w-2xl">
         {type === 'login' && (
           <Login
             switchToForgotPassword={switchToForgotPassword}

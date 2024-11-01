@@ -59,17 +59,27 @@ const Login: React.FC<AuthDialogProps> = ({
                     placeholder="Email"
                     className="bg-purple-200 hover:bg-purple-300"
                   />
-                  <p className="text-sm text-red-500">
-                    {loginMethods.formState.errors.email?.message || ''}
-                  </p>
+                  {loginMethods.formState.errors.email?.message && (
+                    <span className="text-sm text-red-500">
+                      {' '}
+                      {loginMethods.formState.errors.email?.message}
+                    </span>
+                  )}
                 </div>
                 <div className="grid w-full max-w-sm items-center">
                   <Input
+                    {...loginMethods.register('password')}
                     type="password"
                     id="password"
                     placeholder="Password"
                     className="bg-purple-200 hover:bg-purple-300"
                   />
+                  {loginMethods.formState.errors.password?.message && (
+                    <span className="text-sm text-red-500">
+                      {' '}
+                      {loginMethods.formState.errors.password?.message}
+                    </span>
+                  )}
                 </div>
                 <CardDescription>
                   <span
