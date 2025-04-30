@@ -1,5 +1,6 @@
 'use client'
-import { AuthDialog } from '../AuthDialog'
+
+import { AuthDialog } from '@/components/Shared/AuthDialog'
 
 const LandingPage = () => {
   return (
