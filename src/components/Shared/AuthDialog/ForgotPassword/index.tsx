@@ -1,7 +1,6 @@
 'use client'
 
 import { yupResolver } from '@hookform/resolvers/yup'
-import Image from 'next/image'
 import { useCallback } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
@@ -35,65 +34,52 @@ const ForgotPassword: React.FC<AuthDialogProps> = ({ switchToLogin }) => {
   )
 
   return (
-    <div className="flex w-full gap-4">
-      <div className="hidden items-center justify-center rounded-lg sm:flex sm:grow">
-        <Image
-          src="/images/passwordReset.png"
-          alt="Illustration"
-          width={320}
-          height={320}
-        />
-      </div>
-      <Card className="w-[90%] items-center border-none shadow-none sm:w-[55%]">
-        <CardHeader className="flex items-center gap-2">
-          <CardTitle className="text-purple-800">Reset Password</CardTitle>
-          <CardDescription>
-            We will send an email to your box, just follow that link to set your
-            new password.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form
-            onSubmit={forgotPasswordMethods.handleSubmit(
-              onForgotPasswordSubmit,
+    <Card className="items-center border-none shadow-none">
+      <CardHeader className="flex items-center gap-2">
+        <CardTitle>Reset Password</CardTitle>
+        <CardDescription>
+          We will send an email to your box, just follow that link to set your
+          new password.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form
+          onSubmit={forgotPasswordMethods.handleSubmit(onForgotPasswordSubmit)}
+        >
+          <div className="grid w-full max-w-sm items-center">
+            <Input
+              {...forgotPasswordMethods.register('email')}
+              type="email"
+              id="email"
+              placeholder="Email"
+            />
+            {forgotPasswordMethods.formState.errors.email?.message && (
+              <span className="text-sm text-red-500">
+                {forgotPasswordMethods.formState.errors.email?.message}
+              </span>
             )}
+          </div>
+        </form>
+      </CardContent>
+      <CardFooter className="flex w-full flex-col justify-center gap-2">
+        <Button
+          type="submit"
+          className="w-full"
+          onClick={forgotPasswordMethods.handleSubmit(onForgotPasswordSubmit)}
+        >
+          Reset Password
+        </Button>
+        <CardDescription className="text-center">
+          Try to{' '}
+          <span
+            className="cursor-pointer text-purple-700 hover:text-purple-800"
+            onClick={switchToLogin}
           >
-            <div className="grid w-full max-w-sm items-center">
-              <Input
-                {...forgotPasswordMethods.register('email')}
-                type="email"
-                id="email"
-                placeholder="Email"
-                className="bg-purple-200 hover:bg-purple-300"
-              />
-              {forgotPasswordMethods.formState.errors.email?.message && (
-                <span className="text-sm text-red-500">
-                  {forgotPasswordMethods.formState.errors.email?.message}
-                </span>
-              )}
-            </div>
-          </form>
-        </CardContent>
-        <CardFooter className="flex w-full flex-col justify-center gap-2">
-          <Button
-            type="submit"
-            className="w-full bg-purple-700 hover:bg-purple-800"
-            onClick={forgotPasswordMethods.handleSubmit(onForgotPasswordSubmit)}
-          >
-            Reset Password
-          </Button>
-          <CardDescription className="text-center">
-            Try to
-            <span
-              className="cursor-pointer text-purple-700 hover:text-purple-800"
-              onClick={switchToLogin}
-            >
-              {' login again.'}
-            </span>
-          </CardDescription>
-        </CardFooter>
-      </Card>
-    </div>
+            login again.
+          </span>
+        </CardDescription>
+      </CardFooter>
+    </Card>
   )
 }
 
