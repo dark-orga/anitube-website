@@ -2,6 +2,7 @@ import '../styles/global.css'
 import { Rubik } from 'next/font/google'
 import localFont from 'next/font/local'
 
+import { Providers } from '@/lib/providers'
 import { cn } from '@/lib/utils'
 
 const boldenVan = localFont({
@@ -38,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(boldenVan.variable, dkb.variable, rubik.variable)}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

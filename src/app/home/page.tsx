@@ -3,6 +3,8 @@
 import Lenis from 'lenis'
 import { useEffect, useRef } from 'react'
 
+import { TopTen } from '@/components/Shared/TopTen'
+
 export default () => {
   const animationRequestRef = useRef<number>()
 
@@ -22,5 +24,10 @@ export default () => {
     }
   }, [])
 
-  return <div className=""></div>
+  return (
+    <div className="flex size-full gap-3">
+      <div className="grow"></div>
+      <TopTen />
+    </div>
+  )
 }

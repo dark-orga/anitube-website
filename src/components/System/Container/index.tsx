@@ -7,7 +7,7 @@ const containerStyles = cva('px-4 lg:px-8 w-full h-full', {
   variants: {
     type: {
       fluid: 'w-full',
-      fixed: '~max-w-[56rem]/[84rem] mx-auto',
+      fixed: '~max-w-[56rem]/[83.5rem] mx-auto',
     },
   },
   defaultVariants: {
