@@ -19,7 +19,7 @@ export default ({ children }: Readonly<{ children: React.ReactNode }>) => {
       </div>
       <NavigationBar />
       <div className="relative">
-        <Container className="min-h-screen">{children}</Container>
+        <Container className="mt-5 min-h-screen">{children}</Container>
       </div>
     </>
   )

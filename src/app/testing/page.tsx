@@ -7,11 +7,6 @@ const TestingPage = () => {
       <AnimeCard
         img={data[0].image}
         title={data[0].title}
-        malScore={data[0].MALScore}
-        description={data[0].description}
-        aired={data[0].Aired}
-        status={data[0].Status}
-        genres={data[0].Genres}
       />
     </div>
   )
